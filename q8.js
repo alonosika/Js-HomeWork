@@ -1,31 +1,31 @@
 function happy_number(num) 
 {
-    var m, n ;
-    var c = [] ;
+    let sum, number ;
+    let c = [] ;
  
     while(num != 1 && c[num] !== true) 
     {
         c[num] = true ;
-        m = 0 ;
+        sum= 0 ;
         while (num > 0) {
-            n = num % 10 ;
-            m += n * n ;
-            num = (num  - n) / 10 ;
+            number = num % 10 ;
+            sum += number * number ;
+            num = (num  - number) / 10 ;
         }
-        num = m ;
+        num = sum ;
     }
     return (num == 1) ;
 }
  
 let cnt = 5;
 let num = 1;
-let f5 = ''; 
+let first5 = ''; 
 while(cnt-- > 0) 
 {
     while(!happy_number(num))
         num++ ;
-f5 = f5+(num + ", ") ;
+first5 = first5+(num + ", ") ;
 
     num++ ;
 }
-console.log('First 5 happy numbers are : '+f5);
+console.log('First 5 happy numbers are : '+first5);
